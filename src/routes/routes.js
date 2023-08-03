@@ -1,5 +1,6 @@
 import RegistrationPage from "../pages/registration_page";
 import LandingPage from "../pages/landing_page";
+import SmartPhones from "../components/smartphones";
 
 export const routes = [
     {
@@ -9,5 +10,9 @@ export const routes = [
     {
         path: "/registration",
         component: RegistrationPage
+    },
+    {
+        path: "/products/:item",
+        component: SmartPhones
     }
 ]
