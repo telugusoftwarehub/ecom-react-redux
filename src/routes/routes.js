@@ -1,6 +1,8 @@
 import RegistrationPage from "../pages/registration_page";
 import LandingPage from "../pages/landing_page";
-import SmartPhones from "../components/smartphones";
+import Products from "../components/products";
+import ProductDetails from "../pages/product_details_page";
+import PaymentGateWay from "../pages/payment_page";
 
 export const routes = [
     {
@@ -13,6 +15,14 @@ export const routes = [
     },
     {
         path: "/products/:item",
-        component: SmartPhones
+        component: Products
+    },
+    {
+        path: "/product/details/:id",
+        component: ProductDetails
+    },
+    {
+        path: "/buy",
+        component: PaymentGateWay
     }
 ]

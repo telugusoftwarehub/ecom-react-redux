@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Row, Col } from "reactstrap";
 
 import Carousel from "../components/carousel";
 
-const LandingPage = () => {
+const LandingPage = (props) => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
@@ -15,7 +16,12 @@ const LandingPage = () => {
 
     return <>
         <Row>
+            <Col>
             <h2> E-Com Application</h2>
+            </Col>
+            <Col>
+                <h3> Your Cart <Link to="/buy">{props.cart}</Link></h3>
+            </Col>
         </Row>
         <Row>
             <Link to="/registration"> Sing Up/Register</Link>
@@ -57,4 +63,10 @@ const LandingPage = () => {
     </>
 }
 
-export default LandingPage;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cartCount
+    }
+}
+const mapDispatchToProps = (dispatch) => {}
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);
